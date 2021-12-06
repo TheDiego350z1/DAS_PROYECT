@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UDBModelStoreContainer" CdmEntityContainer="UDBEntities">
+    <EntitySetMapping Name="Carrera">
+      <EntityTypeMapping TypeName="UDBModel.Carrera">
+        <MappingFragment StoreEntitySet="Carrera">
+          <ScalarProperty Name="idCarrera" ColumnName="idCarrera" />
+          <ScalarProperty Name="nameCarrera" ColumnName="nameCarrera" />
+          <ScalarProperty Name="objetivoCarrera" ColumnName="objetivoCarrera" />
+          <ScalarProperty Name="perfilEgresoCarrera" ColumnName="perfilEgresoCarrera" />
+          <ScalarProperty Name="areaDesempenoCarrera" ColumnName="areaDesempenoCarrera" />
+          <ScalarProperty Name="pensumCarrera" ColumnName="pensumCarrera" />
+          <ScalarProperty Name="tipoCarrera" ColumnName="tipoCarrera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo">
+      <EntityTypeMapping TypeName="UDBModel.Tipo">
+        <MappingFragment StoreEntitySet="Tipo">
+          <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+          <ScalarProperty Name="nameTipo" ColumnName="nameTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="UDBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+          <ScalarProperty Name="mailUser" ColumnName="mailUser" />
+          <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consulta">
+      <EntityTypeMapping TypeName="UDBModel.Consulta">
+        <MappingFragment StoreEntitySet="Consulta">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="contenidoConsulta" ColumnName="contenidoConsulta" />
+          <ScalarProperty Name="correoConsulta" ColumnName="correoConsulta" />
+          <ScalarProperty Name="tipoConsulta" ColumnName="tipoConsulta" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

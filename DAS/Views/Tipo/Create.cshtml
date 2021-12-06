@@ -1,0 +1,29 @@
+﻿@model DAS.Models.TipoViewModel.TipoViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Create", "Tipo", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("Error", new { @class = "Text-danger" })
+
+            @Html.LabelFor(d => d.Name)
+            @Html.TextBoxFor(d => d.Name, new { @class = "form-control form-control-lg" })
+            @Html.ValidationMessage("Name", new { @class = "text-danger" })
+            <br />
+
+            <div>
+                <input type="submit" class="btn btn-success  btn-lg" value="Guardar" />
+            </div>
+
+        }
+
+    </div>
+
+</div>

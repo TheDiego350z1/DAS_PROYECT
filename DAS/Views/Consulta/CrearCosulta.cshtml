@@ -1,0 +1,41 @@
+﻿@model DAS.Models.ConsultaViewModel.CosultaViewModel
+@{
+    ViewBag.Title = "CrearCosulta";
+}
+
+<h2>CrearCosulta</h2>
+
+<div class="row">
+    @using (Html.BeginForm("CrearCosulta", "Consulta", FormMethod.Post))
+    {
+        <div class="col-md-12">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("Error", new { @class = "Text-danger" })
+
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, new { @class = "form-control form-control-lg" })
+            @Html.ValidationMessage("Nombre", new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(d => d.Correo)
+            @Html.TextBoxFor(d => d.Correo, new { @class = "form-control form-control-lg" })
+            @Html.ValidationMessage("Correo", new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(d => d.Tipo)
+            @Html.TextBoxFor(d => d.Tipo, new { @class = "form-control form-control-lg" })
+            @Html.ValidationMessage("Tipo", new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(d => d.Contendio)
+            @Html.TextAreaFor(d => d.Contendio, new { @class = "form-control form-control-lg" })
+            @Html.ValidationMessage("Contendio", new { @class = "text-danger" })
+            <br />
+
+            <div class="d-flex justify-content-end">
+                <input type="submit" class="btn btn-success  btn-lg" value="Enviar" />
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="idCarrera" />
+    </Key>
+    <Property Name="idCarrera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameCarrera" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="objetivoCarrera" Type="text" Nullable="false" />
+    <Property Name="perfilEgresoCarrera" Type="text" Nullable="false" />
+    <Property Name="areaDesempenoCarrera" Type="text" Nullable="false" />
+    <Property Name="pensumCarrera" Type="text" Nullable="false" />
+    <Property Name="tipoCarrera" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consulta">
+    <Key>
+      <PropertyRef Name="idConsulta" />
+    </Key>
+    <Property Name="idConsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoConsulta" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="correoConsulta" Type="varchar" MaxLength="250" />
+    <Property Name="contenidoConsulta" Type="text" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tipo">
+    <Key>
+      <PropertyRef Name="idTipo" />
+    </Key>
+    <Property Name="idTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameTipo" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameUser" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mailUser" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="passwordUser" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Carrera__tipoCar__37A5467C">
+    <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+    <End Role="Carrera" Type="Self.Carrera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo">
+        <PropertyRef Name="idTipo" />
+      </Principal>
+      <Dependent Role="Carrera">
+        <PropertyRef Name="tipoCarrera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UDBModelStoreContainer">
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consulta" EntityType="Self.Consulta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Carrera__tipoCar__37A5467C" Association="Self.FK__Carrera__tipoCar__37A5467C">
+      <End Role="Tipo" EntitySet="Tipo" />
+      <End Role="Carrera" EntitySet="Carrera" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
