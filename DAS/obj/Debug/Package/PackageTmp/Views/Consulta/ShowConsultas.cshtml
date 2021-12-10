@@ -1,0 +1,31 @@
+﻿@model   List<DAS.Models.ConsultaViewModel.ViewConsultaViewModel>
+@{
+    ViewBag.Title = "ShowConsultas";
+}
+
+<h2>ShowConsultas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Consulta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var oElemento in Model)
+        {
+            <tr>
+                <th scope="row">@oElemento.Id</th>
+                <td>@oElemento.Nombre</td>
+                <td>@oElemento.Tipo </td>
+                <td>@oElemento.Correo</td>
+                <td>@oElemento.Contenido</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

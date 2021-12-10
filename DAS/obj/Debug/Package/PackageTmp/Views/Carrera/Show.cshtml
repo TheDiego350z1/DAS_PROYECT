@@ -1,0 +1,14 @@
+﻿@model DAS.Models.CarreraViewModel.ShowCarreraViewModel
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model.Name</h2>
+<h3>Objetivo de carrera</h3>
+<p>@Model.Objetivo</p>
+<h3>Perfil de egreso</h3>
+<p>@Model.Perfil</p>
+<h3>Area de desempeño</h3>
+<p>@Model.Area</p>
+<br />
+<input onclick="document.location.href='@Url.Content("~"+Model.Pensum)'" type="submit" class="btn btn-success btn-lg" value="Ver Pensum" />

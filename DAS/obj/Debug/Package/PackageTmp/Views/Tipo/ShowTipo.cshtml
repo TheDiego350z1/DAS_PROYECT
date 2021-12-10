@@ -1,0 +1,50 @@
+﻿@model List<DAS.Models.TipoViewModel.TableTipoViewModel>
+@{
+    ViewBag.Title = "ShowTipo";
+}
+
+<h2>ShowTipo</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var oElemento in Model)
+        {
+            <tr>
+                <th scope="row">@oElemento.Id</th>
+                <td>@oElemento.Name</td>
+                <td><input onclick="document.location.href='@Url.Content("~/Tipo/Edit/"+oElemento.Id)'" type="button" class="btn btn-primary" value="Editar" />  </td>
+                <td><input onclick="funcDelete(@oElemento.Id)" type="button" class="btn btn-danger" value="Eliminar" /></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<script>
+    function funcDelete(id) {
+
+        if (confirm("Desea eliminar el usuario")) {
+
+            url = "@Url.Content("~/Tipo/Delete/")" + id;
+
+            $.post(url, function (data) {
+
+                if (data == "1") {
+                    document.location.href = "@Url.Content("~/Tipo/ShowUser")";
+                } else {
+                    alert("Error al eliminar usuario");
+                }
+
+            });
+        };
+
+    };
+</script>

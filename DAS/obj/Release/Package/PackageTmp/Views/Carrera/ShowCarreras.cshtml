@@ -1,0 +1,21 @@
+﻿@model List<DAS.Models.CarreraViewModel.ListCarreraViewModel>
+@{
+    ViewBag.Title = "ShowCarreras";
+}
+
+<h2>ShowCarreras</h2>
+
+<div class="row">
+    @foreach (var oModel in Model)
+    {
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">@oModel.Name</h2>
+                    <p class="card-text">@oModel.Objetivo</p>
+                    <input onclick="document.location.href='@Url.Content("~/Carrera/Show/"+oModel.Id)'" type="submit" class="btn btn-success btn-lg" value="Ver carrera" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

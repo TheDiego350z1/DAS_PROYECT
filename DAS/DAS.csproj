@@ -193,6 +193,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\c1.jpg" />
+    <Content Include="Img\c2.jpg" />
+    <Content Include="Img\c3.jpg" />
+    <Content Include="Img\c4.jpg" />
+    <Content Include="Img\foot_social\facebook-square-brands.svg" />
+    <Content Include="Img\foot_social\facebook.svg" />
+    <Content Include="Img\foot_social\instagram-brands.svg" />
+    <Content Include="Img\foot_social\instagram.svg" />
+    <Content Include="Img\foot_social\whatsapp.svg" />
     <Content Include="Img\logo_universidaddonbosco.png" />
     <Content Include="Models\DB\DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
